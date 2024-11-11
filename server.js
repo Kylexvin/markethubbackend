@@ -6,7 +6,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import multer from 'multer';
 import fs from 'fs';
-import User from './models/user.js';
+import User from './models/User.js';
 import Product from './models/Product.js';
 import { verifyToken, isAdmin } from './middleware/authMiddleware.js';
 
