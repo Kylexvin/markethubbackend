@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import multer from 'multer';
+import multer from 'multer'; 
 import fs from 'fs';
 import User from './models/user.js';
 import Product from './models/Product.js';
