@@ -2,7 +2,7 @@
   "name": "marketplace",
   "version": "1.0.0",
   "description": "Marketplace application backend",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js", 
