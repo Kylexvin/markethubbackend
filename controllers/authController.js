@@ -1,6 +1,6 @@
 // backend/controllers/authController.js
 import User from "../models/user.js"; // Ensure the filename is correct (case-sensitive)
-import bcrypt from "bcrypt";
+import bcrypt from 'bcryptjs';
 import jwt from "jsonwebtoken";
 
 // Register user

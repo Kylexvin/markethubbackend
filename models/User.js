@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
   role: {  
     type: String,
     enum: ['seller', 'admin'], // Define valid roles
-    default: 'admin', // Change default role to 'admin'
+    default: 'seller', // Change default role to 'admin'
   },
 }, { timestamps: true });
 

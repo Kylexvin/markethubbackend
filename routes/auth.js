@@ -1,6 +1,6 @@
 // routes/auth.js
 import express from 'express';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import User from '../models/user.js';
 
@@ -10,7 +10,7 @@ const router = express.Router();
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_key'; // Ensure this is set correctly
 
 // Login route
-router.post('/login', async (req, res) => {
+router.post('/login', async (req, res) => {  
   const { email, password } = req.body;
 
   if (!email || !password) {
