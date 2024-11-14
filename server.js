@@ -6,7 +6,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import multer from 'multer';
 import fs from 'fs';
-import User from './models/User.js';
+import User from './models/user.js';
 import Product from './models/Product.js';
 import { verifyToken, isAdmin } from './middleware/authMiddleware.js';
 
@@ -194,37 +194,12 @@ app.delete('/api/admin/products/rejected', verifyToken, isAdmin, async (req, res
     } catch (error) {
         console.error('Error deleting rejected products:', error);
         res.status(500).json({ error: 'Error deleting rejected products' });
-    }
-});
+    } 
+}); 
 
-// DELETE request to remove a product
-const handleDelete = async (productId) => {
-    try {
-      await fetch(`http://localhost:5000/api/admin/products/${productId}`, {
-        method: 'DELETE',
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
-      }); 
-   
-      // Fetch the latest list of approved products after deletion
-      const response = await fetch('http://localhost:5000/api/admin/products/approved', {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
-      });
   
-      if (!response.ok) {
-        throw new Error('Failed to fetch approved products.');
-      }
   
-      const updatedApprovedProducts = await response.json();
-      setApprovedProducts(updatedApprovedProducts);
-    } catch (err) {
-      setError('Failed to delete product. Please try again.');
-    }
-  };
-  
-
-
+ 
 // Get All Products (Public)
 app.get('/api/products', async (req, res) => {
   try {
@@ -319,7 +294,7 @@ app.delete('/api/products/delete/:id', verifyToken, async (req, res) => {
       console.error('Error deleting product:', error);
       res.status(500).json({ error: 'Error deleting product' });
     }
-  });
+  }); 
 
 
 
